@@ -26,7 +26,7 @@ def _serve(client : socket.socket, addr : tuple[str, int]) -> None:
                 print('Client at {} disconnected.'.format(addr))
                 break
 
-            print('Received data from {}: {}'.format(addr, data.decode()))
+            print('Client@{}: {}'.format(addr[0], data.decode()))
             client.send(data)
 
     except ConnectionResetError as client_disconnect:

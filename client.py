@@ -12,7 +12,7 @@ def connect(server_addr : tuple[str, int]) -> None:
 
                 tcp_service.send(user_input.encode())
                 response = tcp_service.recv(1024)
-                print('Server echoed: {}'.format(response.decode()))
+                print('Server@{}: {}'.format(server_addr[0], response.decode()))
 
     except KeyboardInterrupt:
         print('Shutting down.')
