@@ -1,10 +1,10 @@
 import socket
 
-def start(host=socket.gethostname(), port=8081) -> None:
+def start(ip : str=socket.gethostname(), port : int=8081) -> None:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
-        server_socket.bind((host, port))
+        server_socket.bind((ip, port))
         server_socket.listen() 
-        print('Started accepting connections at {} {}'.format(host, port))
+        print('Started accepting connections at {} {}'.format(ip, port))
 
         try:
             while True:

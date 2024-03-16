@@ -15,9 +15,7 @@ if __name__ == '__main__':
     try:
         server_thread.start()
         print('Started background server.')
-
-        server_addr = (socket.gethostname(), 8081)
-        client.connect(server_addr)
+        client.connect(socket.gethostname(), 8081)
 
     except KeyboardInterrupt:
         print('Stopping daemon server.')
